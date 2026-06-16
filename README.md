@@ -21,6 +21,13 @@ It acts as an enterprise-grade, self-healing safety net for qBittorrent (v5.0+),
 * **The 12-Hour Immortal Watcher:** Completely bypasses Docker/process timeouts. Spawns an independent `nohup` watcher that tolerates extreme disk I/O API lockups and will patiently wait in queue up to 12 hours for massive REMUXes to finish checking before seamlessly auto-starting them.
 * **True Atomic Block Logging:** Safely handles massive multi-season deletions. Uses `O_APPEND` atomic writes to perfectly stack formatted log boxes without a single overlapping character, even if 20 scripts fire at the exact same microsecond. 
 
+### ⚙️ Configuration
+Open the `.sh` script and review the **User Configuration** block at the very top. You must tweak these variables to match your environment before running!
+1. `SEARCH_DIR`: Change this to your main media library or root download folder. This tells the script where to search for the missing files.
+2. `qbit_url`: By default, this is set to `http://localhost:8080`. Change this to your actual qBittorrent WebUI address. *(Note: If your WebUI requires authentication, you must check "Bypass authentication for clients on localhost" in your qBittorrent settings).*
+
+**Advanced Multi-Instance Users:** If you run a multi-instance Docker setup and name your instances `qbit-1`, `qbit-2` on ports `9001`, `9002` like I do, the script contains advanced math that will automatically override the default URL and dynamically route the API commands to the correct instance based on the torrent's save path!
+
 ### 🚀 Usage 
 This script is designed to be triggered by `qui` (or similar monitoring tools). 
 
