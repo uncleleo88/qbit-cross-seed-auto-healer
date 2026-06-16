@@ -26,7 +26,7 @@ Open the `.sh` script and review the **User Configuration** block at the very to
 1. `SEARCH_DIR`: Change this to your main media library or root download folder. This tells the script where to search for the missing files.
 2. `qbit_url`: By default, this is set to `http://localhost:8080`. Change this to your actual qBittorrent WebUI address. *(Note: If your WebUI requires authentication, you must check "Bypass authentication for clients on localhost" in your qBittorrent settings).*
 
-**Advanced Multi-Instance Users:** If you run a multi-instance Docker setup and name your instances `qbit-1`, `qbit-2` on ports `9001`, `9002` like I do, the script contains advanced math that will automatically override the default URL and dynamically route the API commands to the correct instance based on the torrent's save path!
+**Advanced Multi-Instance Users:** If you run a multi-instance Docker setup and name your instances `qbit-0`, `qbit-1`, `qbit-1` on ports `9000`, `9001`, `9002` like I do, the script contains advanced math that will automatically override the default URL and dynamically route the API commands to the correct instance based on the torrent's save path!
 
 ### 🚀 Usage 
 This script is designed to be triggered by `qui` (or similar monitoring tools). 
